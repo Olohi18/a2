@@ -87,12 +87,12 @@ public class GA_Simulation {
 
       //loop creates n new individuals by crossbreeding two bestFit individuals (parents)
       for (int  i = 0; i < this.n; i++){
-        int randomIndex1 = ThreadLocalRandom.current().nextInt(0, 15); //select a random index and stores in randomIndex1
-        int randomIndex2 = ThreadLocalRandom.current().nextInt(0, 15); //select a random index and stores in randomIndex2
+        int randomIndex1 = ThreadLocalRandom.current().nextInt(0, this.winners); //select a random index and stores in randomIndex1
+        int randomIndex2 = ThreadLocalRandom.current().nextInt(0, this.winners); //select a random index and stores in randomIndex2
 
         //ensures elements chosen are different to avoid self-breeding
         while (randomIndex1 == randomIndex2){
-          randomIndex1 = ThreadLocalRandom.current().nextInt(0, 15);
+          randomIndex1 = ThreadLocalRandom.current().nextInt(0, this.winners);
         }
 
         //creates a child from the chosen parents and adds it to the newGeneration
@@ -114,14 +114,14 @@ public class GA_Simulation {
       Individual kthIndividual = generation.get(this.winners - 1); //gets the kth fit individual
 
       //prints data
-      System.out.println("The chromosome of the best individual is " + bestIndividual.chromosome.toString());
+      System.out.println("The chromosome of the best individual is " + bestIndividual.toString());
       System.out.println("---------");
       System.out.println("The best fit of the best individual is " + bestIndividual.getFitness()); //will this check for fitness again??--- yes but same chromosome, same fitness...
       System.out.println("----------------");
       System.out.println("The fit of the kth individual is " + kthIndividual.getFitness());
       System.out.println("----------------");
       System.out.println("The least fit of the least fit individual is " + leastIndividual.getFitness());
-      System.out.println("----------------");
+      System.out.println();
 
     }
 
@@ -136,6 +136,7 @@ public class GA_Simulation {
 
       //passes the population through "this.rounds" rounds of evolution
       for (int i = 0; i < this.rounds; i++){
+          System.out.println("Round " + (i+1));
           population = evolve(population);
           describeGeneration(population);
       }  
@@ -149,7 +150,10 @@ public class GA_Simulation {
      */
     public static void main(String[] args) {
       GA_Simulation generationSample = new GA_Simulation(100, 15, 100, 8, 20, 0.01, 5); //creates a new GA instance
+      GA_Simulation generation1 = new GA_Simulation(100, 5, 10, 8, 5, 0.01, 5); //creates a new GA instance for exploration
       generationSample.run();
+
+      
       
     }
 }

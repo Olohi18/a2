@@ -30,7 +30,7 @@ ___YES__ 1 pt: `run` method
 
 Kudos:
 
-_____ (Kudos!) Exploration of genetic algorithm performance under different parameter settings
+___Kudos__ (Kudos!) Exploration of genetic algorithm performance under different parameter settings
 
 
 ## General Items:
