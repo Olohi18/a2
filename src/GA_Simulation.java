@@ -127,6 +127,7 @@ public class GA_Simulation {
 
     
     /**
+     * Runs the entire GA_simulation experiment 
      * @return: the final population produced after "rounds" rounds of evolution
      */
     public ArrayList<Individual> run(){
