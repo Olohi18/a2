@@ -111,11 +111,14 @@ public class GA_Simulation {
       rankPopulation(generation); //ranks the population based on best fit
       Individual bestIndividual = generation.get(0); //gets the most fit individual
       Individual leastIndividual = generation.get(this.n-1); //gets the least fit individual
+      Individual kthIndividual = generation.get(this.winners - 1); //gets the kth fit individual
 
       //prints data
       System.out.println("The chromosome of the best individual is " + bestIndividual.chromosome.toString());
       System.out.println("---------");
       System.out.println("The best fit of the best individual is " + bestIndividual.getFitness()); //will this check for fitness again??--- yes but same chromosome, same fitness...
+      System.out.println("----------------");
+      System.out.println("The fit of the kth individual is " + kthIndividual.getFitness());
       System.out.println("----------------");
       System.out.println("The least fit of the least fit individual is " + leastIndividual.getFitness());
       System.out.println("----------------");
