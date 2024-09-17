@@ -11,7 +11,7 @@ Would you like to give "kudos" to anyone who was particularly supportive or help
 
 Cite any references used:
 
-Brief summary of what you observed about the "winners" produced by your genetic algorithm. Did changing the parameter values have any effect on what you observed?
+Brief summary of what you observed about the "winners" produced by your genetic algorithm. Did changing the parameter values have any effect on what you observed?gg
 
 Reflection on your experience with this assignment-- what was interesting? what was hard? what do you feel like you learned?
 
